@@ -1,7 +1,11 @@
 import React from 'react'
 import {Form, Button} from 'react-bootstrap';
 import {useForm} from '../hooks/useForm'
+
+import {registroUsuarios} from '../actions/actions'
+import { useDispatch } from 'react-redux';
 export const Usuario =()=>{
+    const dispatch=useDispatch();
     const [formValues, handleInputChange, reset]= useForm({
         id:'',
         nombre:'',
@@ -13,7 +17,7 @@ export const Usuario =()=>{
     const handleRegistro=(e)=>{
         e.preventDefault();
         console.log(id,nombre,email,telefono)
-        dispatch(registroUsuario(id,nombre,email,telefono));
+       dispatch(registroUsuarios(id,nombre,email,telefono))
         reset();
     }
    

@@ -1,8 +1,9 @@
-/* import {types} from '../types/types'
+ import {types} from '../types/types'
 
-export const usuarioReducrer= (state=[], action)=>{
+export const usuarioReducer= (state=[], action)=>{
 
-    switch(action,type){case types.Registrar:
+    switch(action.type){
+        case types.Registrar:
     return{
         id: action.payload.id,
         nombre:action.payload.nombre,
@@ -10,5 +11,4 @@ export const usuarioReducrer= (state=[], action)=>{
         telefono: action.payload.telefono
    }
 default:return state}
-
-} */
+}
